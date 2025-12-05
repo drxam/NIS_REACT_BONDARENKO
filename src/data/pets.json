@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Крутой кот",
+    "species": "Кот",
+    "mood": "happy",
+    "energy": 80,
+    "level": 1,
+    "avatar": "🐱"
+  },
+  {
+    "id": 2,
+    "name": "LMAO пес",
+    "species": "Собака",
+    "mood": "happy",
+    "energy": 75,
+    "level": 1,
+    "avatar": "🐶"
+  },
+  {
+    "id": 3,
+    "name": "Кайф дракон",
+    "species": "Дракон",
+    "mood": "happy",
+    "energy": 90,
+    "level": 2,
+    "avatar": "🐉"
+  },
+  {
+    "id": 4,
+    "name": "Е единорог",
+    "species": "Единорог",
+    "mood": "happy",
+    "energy": 85,
+    "level": 1,
+    "avatar": "🦄"
+  },
+  {
+    "id": 5,
+    "name": "Александр лис",
+    "species": "Лис",
+    "mood": "happy",
+    "energy": 70,
+    "level": 1,
+    "avatar": "🦊"
+  },
+  {
+    "id": 6,
+    "name": "Медведь",
+    "species": "Медведь",
+    "mood": "happy",
+    "energy": 95,
+    "level": 3,
+    "avatar": "🐻"
+  }
+]
+
+
