@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "auth": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Register",
+    "errors": {
+      "required": "This field is required",
+      "invalidCredentials": "Invalid username or password",
+      "networkError": "Network error. Try again later."
+    }
+  },
+  "register": {
+    "title": "Registration",
+    "stub": "Registration is not supported by DummyJSON API. Use any user from the users list to login.",
+    "backToLogin": "Back to Login"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to the admin panel"
+  },
+  "products": {
+    "title": "Products",
+    "search": "Search products...",
+    "category": "Category",
+    "price": "Price",
+    "rating": "Rating",
+    "empty": "No products found",
+    "loading": "Loading products...",
+    "error": "Failed to load products",
+    "pageSize": "Per page",
+    "prev": "Previous",
+    "next": "Next",
+    "of": "of"
+  },
+  "product": {
+    "back": "Back to list",
+    "description": "Description",
+    "category": "Category",
+    "price": "Price",
+    "rating": "Rating",
+    "brand": "Brand",
+    "stock": "Stock",
+    "loading": "Loading product...",
+    "error": "Failed to load product",
+    "notFound": "Product not found"
+  },
+  "profile": {
+    "title": "Profile",
+    "name": "Name",
+    "email": "Email",
+    "username": "Username"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "pageSize": "Products per page"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "notFound": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist."
+  }
+}

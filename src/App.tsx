@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppProviders } from './app/providers/AppProviders';
+import { ThemeProvider } from './app/providers/ThemeProvider';
+import { SyncI18n } from './app/providers/SyncI18n';
+import { AuthInit } from './features/auth/initAuth/AuthInit';
+import { ErrorBoundary } from './shared/ui/ErrorBoundary/ErrorBoundary';
+import { AppRouter } from './app/router';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <AppProviders>
+        <ThemeProvider>
+          <SyncI18n />
+          <AuthInit />
+          <AppRouter />
+        </ThemeProvider>
+      </AppProviders>
+    </ErrorBoundary>
   );
 }
 

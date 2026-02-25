@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# Admin Panel (E-commerce SPA)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SPA административная панель для e-commerce: аутентификация, каталог продуктов, настройки, i18n. Стек: React, TypeScript, Redux Toolkit, RTK Query, React Router, i18n. Backend: [DummyJSON](https://dummyjson.com).
 
-## Available Scripts
+## Технологии сверх ТЗ
 
-In the project directory, you can run:
+Использованы дополнительные библиотеки, не указанные явно в задании:
 
-### `npm start`
+- **redux-persist** — сохранение состояния Redux (auth, настройки) в localStorage по требованию ТЗ (раздел 1.5 «Persist (localStorage)»).
+- **CRACO** — замена скриптов сборки (`craco start`, `craco build`) для совместимости с текущей конфигурацией; при необходимости можно вернуть `react-scripts` и собирать через `npx react-scripts build` (импорты в проекте относительные, сборка без CRACO поддерживается).
+- **i18next** и **react-i18next** — реализация интернационализации (i18n) из ТЗ.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Запуск
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install --legacy-peer-deps
+npm start
+```
 
-### `npm test`
+Сборка:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run build
+```
 
-### `npm run build`
+## Архитектура (Feature Sliced Design)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── app/                 # Инициализация приложения
+│   ├── api/             # RTK Query: baseApi, authApi, productsApi
+│   ├── providers/       # AppProviders, ThemeProvider, SyncI18n
+│   ├── router/          # Маршруты (createBrowserRouter), lazy loading
+│   └── store/           # Redux store, auth/settings slices, selectors, hooks
+├── pages/               # Страницы (роуты)
+│   ├── LoginPage, RegisterPage, DashboardPage
+│   ├── ProductsPage, ProductDetailPage
+│   ├── ProfilePage, SettingsPage, LogoutPage, NotFoundPage
+├── widgets/             # Композитные блоки
+│   ├── layout/          # Header, Sidebar, MainLayout
+│   ├── products/        # ProductsList, ProductDetail
+│   └── settings/        # SettingsPanel
+├── features/            # Действия пользователя
+│   └── auth/            # LoginForm, LogoutButton, ProtectedRoute, PublicOnlyRoute, initAuth
+├── entities/            # Бизнес-сущности
+│   ├── user/            # Типы User, AuthUser
+│   └── product/         # Типы Product, ProductsResponse
+└── shared/              # Переиспользуемое
+    ├── config/          # API_BASE_URL, i18n
+    ├── locales/         # en.json, ru.json
+    └── ui/              # ErrorBoundary
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Публичные маршруты:** `/login`, `/register`.
+- **Приватные:** `/`, `/products`, `/products/:id`, `/profile`, `/settings`, `/logout`, `*` (404).
+- **API:** авторизация (POST `/auth/login`, GET `/auth/me`), продукты (GET `/products`, `/products/:id`, `/products/search`).
+- **Настройки** (Redux + persist): язык (ru/en), тема (light/dark), размер страницы каталога.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Тестовые данные для входа (DummyJSON)
 
-### `npm run eject`
+Можно использовать любого пользователя с [dummyjson.com/users](https://dummyjson.com/users), например:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Username:** `emilys`  
+- **Password:** `emilyspass`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Регистрация - заглушка
