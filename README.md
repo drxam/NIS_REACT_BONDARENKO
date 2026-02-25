@@ -1,3 +1,5 @@
+# Бондаренко Дмитрий Алексеевич 
+
 # Admin Panel (E-commerce SPA)
 
 SPA административная панель для e-commerce: аутентификация, каталог продуктов, настройки, i18n. Стек: React, TypeScript, Redux Toolkit, RTK Query, React Router, i18n. Backend: [DummyJSON](https://dummyjson.com).
