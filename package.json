@@ -1,0 +1,10 @@
+{
+  "name": "NIS_REACT_BONDARENKO-root",
+  "private": true,
+  "scripts": {
+    "start": "cd app && npm start",
+    "build": "cd app && npm run build",
+    "test": "cd app && npm test"
+  }
+}
+
